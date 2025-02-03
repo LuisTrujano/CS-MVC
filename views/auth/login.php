@@ -5,7 +5,7 @@
     <?php
         require_once __DIR__ . '/../templates/alertas.php';
     ?>
-    <form method="POST" action="/login" class="formulario">
+    <form method="POST" action="/" class="formulario">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">Email</label>
             <input
