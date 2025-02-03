@@ -1,0 +1,128 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+
+    &__thead{
+        background-color: #246355;
+        color: v.$blanco;
+    }
+
+    &__th{
+        padding: 1rem;
+        text-align: left;
+
+        &-acostado{
+            writing-mode: vertical-lr;
+            transform: rotate(360deg); 
+        }
+    }
+
+    &__tr{
+        &:nth-child(even){
+            background-color: v.$gris-claro;
+            background: #dddddd;
+        }
+    }
+
+    &__td{
+        padding: 1.5rem 1rem;
+
+        &--acciones{
+            @extend .table__td;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            align-items: center;
+        }
+    }
+
+    &__accion{
+        all: unset;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: v.$bold;
+
+
+        &--editar{
+            color: v.$azul;
+        }
+
+        &--eliminar{
+            color: v.$rojo;
+            &-cita{
+              background-color: v.$rojo;
+              padding: 1rem;
+              justify-content: space-between;
+              color: v.$blanco;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+.my-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .my-table th, .my-table td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .my-table th {
+    background-color: #f2f2f2;
+  }
+
+  .my-table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.my-table th, .my-table td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.my-table th {
+  background-color: #246355;
+}
+/*ESTA PARTE PERNTENECE AL CSS PARA EL DISEÑO DE VER CITAS MEDICAS*/
+/*OSEA LA TABLA DE CITAS/CITAS.HTML*/
+#tabla-citas {
+  margin: 0 auto;
+  width: -10px;
+}
+
+table {
+  background-color: white;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap; 
+
+  &.color{
+    background-color: #246355;
+    color: v.$blanco;
+  }
+}
+
+/* Agrega espacio adicional entre columnas */
+th:not(:last-child),
+td:not(:last-child) {
+  padding-right: 20px;
+}
